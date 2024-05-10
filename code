@@ -1,0 +1,70 @@
+let hours = 0;
+let minutes = 0;
+let seconds = 30;
+let obj = document.querySelector('.a52');
+
+let timer1 = setInterval(function() {
+    seconds--;
+    console.log(hours, minutes, seconds)
+    if (seconds < 0) {
+        minutes--;
+        seconds = 59;
+    }
+
+    if (minutes < 0) {
+        hours--;
+        minutes = 59;
+    }
+
+    if (seconds === 10) {
+        obj.classList.add('moveLeft');
+    }
+
+    if (hours === 0 && minutes === 0 && seconds === 0) {
+        clearInterval(timer1);
+    }
+}, 1000);
+
+
+.a52.moveLeft {
+    left: 100px; 
+}
+
+.a52 {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transition: left 2s ease; 
+      }
+  <div id="a52" class="a52"></div>
+
+let hours1 = 1;
+let minutes1 = 0;
+let seconds1 = 0;
+
+let timer = setInterval(function() {
+    seconds1--;
+
+    if (seconds1 < 0) {
+        minutes1--;
+        seconds1 = 59;
+    }
+
+    if (minutes1 < 0) {
+        hours1--;
+        minutes1 = 59;
+    }
+
+    console.log(hours1, minutes1, seconds1);
+
+    if (minutes1 === 10) {
+        alert("Половина часу");
+    }
+
+    if (hours1 === 0 && minutes1 === 0 && seconds1 === 0) {
+        clearInterval(timer);
+    }
+}, 1000)
